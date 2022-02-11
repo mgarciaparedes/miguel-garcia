@@ -1,0 +1,111 @@
+<div class="container mt5">
+  <div class="row">
+    <div class="col l12 m12 s12 center-align">
+      <div class="mb3">
+        <h4>Get In Touch</h4>
+        <h6 class="grey-text text-lighten-1">
+          Reach me. Maybe, you could use some help.
+        </h6>
+      </div>
+      <div class="mb3">
+        <a class="btn btn-color" [routerLink]="['/home']"
+          >< Come back to home</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <form
+    #userForm="ngForm"
+    (ngSubmit)="onSubmit()"
+    class="border-color col s12 mb3"
+  >
+    <div class="row">
+      <div class="input-field col l6 m12 s12">
+        <input
+          id="fullname"
+          type="text"
+          name="fullname"
+          #fullname="ngModel"
+          [(ngModel)]="usermsg.fullname"
+          required
+          pattern="[a-zA-Z]+"
+          class="validate"
+        />
+        <label for="fullname">Name</label>
+      </div>
+      <div class="input-field col l6 m12 s12">
+        <input
+          id="email"
+          type="text"
+          name="email"
+          #email="ngModel"
+          [(ngModel)]="usermsg.email"
+          pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+          required
+          class="validate"
+        />
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field col l12 m12 s12">
+        <input
+          id="subject"
+          type="text"
+          name="subject"
+          #subject="ngModel"
+          [(ngModel)]="usermsg.subject"
+          pattern="[a-zA-Z]+"
+          required
+          class="validate"
+        />
+        <label for="subject">Subject</label>
+      </div>
+      <div class="input-field col s12">
+        <textarea
+          id="message"
+          name="message"
+          #message="ngModel"
+          [(ngModel)]="usermsg.message"
+          class="materialize-textarea validate"
+          required
+        ></textarea>
+        <label for="message">Message</label>
+      </div>
+    </div>
+    <div class="row center-align">
+      <div class="input-field col s12">
+        <div class="card horizontal green lighten-4" *ngIf="status === 1">
+          <div class="card-stacked">
+            <div class="card-content">
+              <p class="green-text text-lighten-1">
+                <i class="fa fa-check"></i> Mail has been sent succesfully. I'll
+                answer you as soon as possible. Thanks for reach me!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card horizontal red lighten-4" *ngIf="status === 2">
+          <div class="card-stacked">
+            <div class="card-content">
+              <p class="red-text text-lighten-1">
+                <i class="fa fa-close"></i> I'm sorry, an error occurred. Please
+                try again!
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-color consolas-font"
+          [disabled]="email.invalid || userForm.invalid"
+          *ngIf="!loading"
+        >
+          Send
+        </button>
+        <div class="progress" style="background-color: #5222d0" *ngIf="loading">
+          <div class="indeterminate" style="background-color: #ec615b"></div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

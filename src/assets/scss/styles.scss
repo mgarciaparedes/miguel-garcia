@@ -1,0 +1,122 @@
+@import "./materialize-imports.scss";
+@import "./margins.scss";
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("../fonts/Century Gothic.ttf");
+}
+
+body {
+  font-family: "Consolas", Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.w50{
+  width: 50%;
+}
+
+.w30{
+  width:30%;
+}
+
+.img-logo {
+  margin-top: 2px;
+  width: 2em;
+}
+
+.img-footer {
+  width: 8em;
+}
+
+.consolas-font {
+  font-family: "Consolas";
+}
+
+.hoverable-image #image1 {
+  display: block;
+}
+
+.hoverable-image #image2 {
+  display: none;
+}
+
+.hoverable-image:hover #image1 {
+  display: none;
+}
+
+.hoverable-image:hover #image2 {
+  display: block;
+}
+
+.border {
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.hashtag-label {
+  color: #4f96c5;
+}
+
+.border-card {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-right: 10px solid #455a64;
+}
+
+.btn-color {
+  background-color: #5222d0;
+}
+
+.btn-color:hover {
+  background-color: #ec615b;
+}
+
+.border-color {
+  background-color: #fafafa;
+  border: 2px solid #eeeeee;
+  border-radius: 3px;
+  padding: 10px;
+  border-right: 10px solid #f5f5f5;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.box {
+  width: 180px;
+  height: auto;
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  margin: 40px;
+}
+
+.box.arrow-top {
+  margin-top: 40px;
+}
+
+.box.arrow-top:after {
+  content: " ";
+  position: absolute;
+  right: 30px;
+  top: -15px;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid black;
+}
+
+.hover-footer-text:hover {
+  color: #ec615b;
+}
+
+.border-right{
+  border-right: 10px solid #f5f5f5;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
